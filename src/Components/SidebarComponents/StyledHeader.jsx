@@ -26,13 +26,14 @@ const TheHeader = () => {
         <h2>Hello Musab</h2>
         
         <div style={{display:"flex", justifyContent:"center",alignItems:"center" }}>
-        <StyledSearch placeholder="Search..." />
         <Switch
           checked={darkMode}
           onChange={() => dispatch(toggleTheme())}
           checkedChildren="🌙"
           unCheckedChildren="☀️"
         />
+        <StyledSearch placeholder="Search..." />
+        
         </div>
     </StyledHeader>
   );

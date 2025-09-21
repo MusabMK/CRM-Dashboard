@@ -93,7 +93,7 @@ export const StyledHeader = styled(Header)`
   align-items: center;
   justify-content: space-between;
   background-color: ${({ themeMode }) => (themeMode ? "#1f1f1f" : "#ffffff")};
-  color: ${({ themeMode }) => (themeMode ? "#fff" : "#000")};ffff;
+  color: ${({ themeMode }) => (themeMode ? "#fff" : "#000")};
 
   
 `;
@@ -127,6 +127,7 @@ export const MainHeader = styled.div`
 
 export const StyledSearch = styled(Input.Search)`
   width: 200px;
+  margin-left:10px;
 `;
 
 export const StyledContent = styled(Content)`
@@ -160,72 +161,6 @@ export const ContentBox = styled.div`
   border-radius: 8px;
 `;
 
-{
-  /*
-
-export const StyledCard = styled.div`
-  margin-bottom: 24px;
-  width: 100%;
-
-  .stat-card {
-    height: 100%;
-    padding: 20px;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-  }
-
-  .stat-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f0ebff;
-    color: #5932ea;
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-
-  h3 {
-    font-size: 14px;
-    font-weight: 500;
-    color: #9197b3;
-    margin: 0;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 4px 0;
-  }
-
-  p {
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .positive {
-    color: #16c098;
-    font-weight: 500;
-  }
-
-  .negative {
-    color: #ff4d4f;
-    font-weight: 500;
-  }
-  .ant-row {
-    padding: 15px;
-  }
-`;
-
-*/
-}
 
 export const StyledCard = styled.div`
   margin-bottom: 24px;
@@ -236,7 +171,7 @@ export const StyledCard = styled.div`
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* keeps rounded corners clean */
+    overflow: hidden;
     height: 150px;
   }
 
@@ -410,4 +345,5 @@ export const GlobalMenuStyles = styled.div`
   .ant-menu-sider{
     overflow-y:auto !important;
   }
+  
 `;

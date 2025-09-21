@@ -17,7 +17,7 @@ const menuItems = [
     label: "Products",
     children: [
       { key: "/products", label: "Overview" }, 
-      { key: "/products/new", label: "Add Product" },
+      { key: "/products/list", label: "Products list" },
     ],
   },
   {

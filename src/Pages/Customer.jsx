@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { Table, Card, Tag, Spin, Alert, Button, Popconfirm } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCustomersRequest, deleteCustomerRequest } from "../Redux/customerSlice";
+import {
+  fetchCustomersRequest,
+  deleteCustomerRequest,
+} from "../Redux/customerSlice";
 import { Link } from "react-router-dom";
 
 const Customer = () => {
@@ -32,16 +35,20 @@ const Customer = () => {
       render: (_, record) => (
         <>
           <Link to={`/customer/edit/${record.key}`}>
-            <Button type="link" >Edit</Button>
+            <Button type="link">Edit</Button>
           </Link>
           <Popconfirm
             title="Are you sure you want to delete this customer?"
             okText="Yes"
             cancelText="No"
             okType="danger"
-            onConfirm={() => dispatch(deleteCustomerRequest(String(record.key)))}
+            onConfirm={() =>
+              dispatch(deleteCustomerRequest(String(record.key)))
+            }
           >
-            <Button type="link" danger>Delete</Button>
+            <Button type="link" danger>
+              Delete
+            </Button>
           </Popconfirm>
         </>
       ),
@@ -49,29 +56,27 @@ const Customer = () => {
   ];
 
   return (
-    <div style={{ padding: "2px" }}>
-      <Card bordered={false}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <h3 style={{ marginBottom: "15px" }}>All Customers</h3>
+    <div>
+      <Card
+        title="All Customers"
+        bordered={false}
+        extra={
           <Link to="/customer/new">
-            <Button type="primary" style={{ marginBottom: "15px" }}>
-              + Add New Customer
-            </Button>
+            <Button type="primary">+ Add New Customer</Button>
           </Link>
-        </div>
-
+        }
+      >
         {loading && <Spin size="large" />}
+        
         {error && <Alert type="error" message={error} />}
+
         {!loading && !error && (
           <Table
             columns={columns}
-            dataSource={list.map((item) => ({ ...item, key: String(item.key) }))}
+            dataSource={list.map((item) => ({
+              ...item,
+              key: String(item.key),
+            }))}
             pagination={{ pageSize: 5 }}
             rowKey={(row) => String(row.key)}
           />

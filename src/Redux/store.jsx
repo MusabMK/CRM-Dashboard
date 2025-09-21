@@ -4,8 +4,8 @@ import themeReducer from "./themeSlice";
 import customerReducer from "./customerSlice";
 import incomeReducer from "./incomeSlice"; 
 import rootSaga from "./rootSaga";           
-
-
+import productReducer from "./productSlice"; 
+import selectedProductsReducer from "./selectedProductsSlice"
 
 const sagaMiddleware = createSagaMiddleware();
 const logger = (store) => (next) => (action) => {
@@ -17,6 +17,8 @@ const store = configureStore({
     theme: themeReducer,
     customers: customerReducer,
     income: incomeReducer, 
+    products: productReducer,
+    selectedProducts: selectedProductsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware, logger),

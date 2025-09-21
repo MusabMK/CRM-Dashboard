@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import StatsCard from "../Components/SidebarComponents/StatsCard.jsx";
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <div>
+    <StatsCard />
+    </div>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

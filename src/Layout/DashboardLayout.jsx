@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import TheHeader from "../Components/SidebarComponents/StyledHeader.jsx";
-import StatsCard from "../Components/SidebarComponents/StatsCard.jsx";
+
 import MainMenu from "../Components/SidebarComponents/SideMenu.jsx";
 import { LayoutWrapper } from "../Styles/SideBarStyles.jsx";
 import Content from "../Components/SidebarComponents/Content.jsx";
@@ -15,23 +15,23 @@ const DashboardLayout = () => {
       <MainMenu
       // collapsed={collapsed} setCollapsed={setCollapsed}
       />
-      
+
 
       <Layout
         style={{
-          marginLeft: collapsed ? 80 : 300, 
+          marginLeft: collapsed ? 80 : 300,
           transition: "margin-left 0.3s ease",
-          background: "transparent", 
+          background: "transparent",
           padding: "24px",
         }}
       >
-       
+
 
         <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
-        <TheHeader
-        // collapsed={collapsed} setCollapsed={setCollapsed}
-        />
-          <StatsCard />
+          <TheHeader
+          // collapsed={collapsed} setCollapsed={setCollapsed}
+          />
+          
           <Content />
         </div>
       </Layout>
