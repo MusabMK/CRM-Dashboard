@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Form, Input, Button, Select, Card } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addCustomer, editCustomer } from "../Redux/customerSlice";
+import { addCustomer, editCustomer } from "../store/actions";
 
 const { Option } = Select;
 
@@ -25,13 +25,11 @@ const AddCustomer = () => {
 
   const onFinish = (values) => {
     if (editingCustomer) {
-      
-      dispatch(editCustomer({ key: editingCustomer.key, updatedData: values }));
+      dispatch(editCustomer(editingCustomer.key, values)); // ✅ pass arguments correctly
     } else {
-      
       dispatch(addCustomer(values));
     }
-    navigate("/customer"); 
+    navigate("/customer");
   };
 
   return (

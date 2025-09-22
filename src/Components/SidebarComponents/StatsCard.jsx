@@ -1,8 +1,21 @@
 import React from "react";
 import { StyledCard } from "../../Styles/SideBarStyles";
-import { UserOutlined, TeamOutlined, ThunderboltOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  TeamOutlined,
+  ThunderboltOutlined,
+} from "@ant-design/icons";
+import { useSelector } from "react-redux";
 
 const StatsCard = () => {
+  const customers = useSelector((state) => state.customers.list);
+
+  const totalCustomers = customers.length;
+
+  const activeMembers = customers.filter((c) => c.status === "Active").length;
+
+  const activeNow = Math.floor(totalCustomers * 0.1); // example: 10% online
+
   return (
     <StyledCard>
       <div className="stats-wrapper">
@@ -11,9 +24,9 @@ const StatsCard = () => {
             <UserOutlined />
           </div>
           <div className="stat-text">
-          <h3>Total Customers</h3>
-          <h2>5,423</h2>
-          <p className="positive">+16% this month</p>
+            <h3>Total Customers</h3>
+            <h2>{totalCustomers}</h2>
+            <p className="positive">+16% this month</p>
           </div>
         </div>
 
@@ -25,9 +38,9 @@ const StatsCard = () => {
             <TeamOutlined />
           </div>
           <div className="stat-text">
-          <h3>Members Today</h3>
-          <h2>1,893</h2>
-          <p className="negative">-1% this month</p>
+            <h3>Members Today</h3>
+            <h2>{activeMembers}</h2>
+            <p className="negative">-1% this month</p>
           </div>
         </div>
 
@@ -39,9 +52,9 @@ const StatsCard = () => {
             <ThunderboltOutlined />
           </div>
           <div className="stat-text">
-          <h3>Active Now</h3>
-          <h2>189</h2>
-          <p>Currently online</p>
+            <h3>Active Now</h3>
+            <h2>{activeNow}</h2>
+            <p>Currently online</p>
           </div>
         </div>
       </div>

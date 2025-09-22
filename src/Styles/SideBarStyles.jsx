@@ -22,7 +22,8 @@ export const StyledSider = styled(Sider)`
   height: 100vh;
   z-index: 1000;
   background: #fff;
-  
+  overflow-y:auto;
+  overflow-x:hidden;
   //display: flex;
   //flex-direction: column;
   //justify-content: space-between !important;
@@ -171,7 +172,7 @@ export const StyledCard = styled.div`
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    overflow-y:auto;
     height: 150px;
   }
 

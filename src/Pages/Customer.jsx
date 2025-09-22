@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { Table, Card, Tag, Spin, Alert, Button, Popconfirm } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchCustomersRequest,
-  deleteCustomerRequest,
-} from "../Redux/customerSlice";
+import { requestFetchCustomers,
+   requestDeleteCustomer
+   } from "../saga/sagaActions";
 import { Link } from "react-router-dom";
 
 const Customer = () => {
@@ -12,7 +11,7 @@ const Customer = () => {
   const { list, loading, error } = useSelector((state) => state.customers);
 
   useEffect(() => {
-    dispatch(fetchCustomersRequest());
+    dispatch(requestFetchCustomers());
   }, [dispatch]);
 
   const columns = [
@@ -43,7 +42,7 @@ const Customer = () => {
             cancelText="No"
             okType="danger"
             onConfirm={() =>
-              dispatch(deleteCustomerRequest(String(record.key)))
+              dispatch(requestDeleteCustomer(String(record.key)))
             }
           >
             <Button type="link" danger>
@@ -67,7 +66,7 @@ const Customer = () => {
         }
       >
         {loading && <Spin size="large" />}
-        
+
         {error && <Alert type="error" message={error} />}
 
         {!loading && !error && (

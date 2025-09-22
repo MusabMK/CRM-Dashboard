@@ -32,7 +32,6 @@ const menuItems = [
     icon: <IncomeIcon aria-label="Income Icon" />,
     label: "Income",
     children: [
-      { key: "/income", label: "Overview" }, 
       { key: "/income/report", label: "Income Report" },
     ],
   },
@@ -41,14 +40,12 @@ const menuItems = [
     label: "Promote",
     children: [
       { key: "/promote", label: "Overview" }, 
-      { key: "/promote/new", label: "New Campaign" },
     ],
   },
   {
     icon: <HelpIcon aria-label="Help Icon" />,
     label: "Help",
     children: [
-      { key: "/help", label: "Overview" }, 
       { key: "/help/contact", label: "Contact Support" },
     ],
   },
