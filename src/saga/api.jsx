@@ -1,7 +1,9 @@
+import axiosClient from "./axiosClient";
+
 export const fetchCustomersApi = async () => {
-  const res = await fetch("https://randomuser.me/api/?results=15");
-  if (!res.ok) throw new Error("Failed to fetch customers");
-  const data = await res.json();
+  const res = await axiosClient.get("https://randomuser.me/api/?results=15");
+  const data = res.data;
+
 
   return data.results.map((user) => ({
     key: user.login.uuid,
@@ -15,9 +17,8 @@ export const fetchCustomersApi = async () => {
 };
 
 export const fetchProductsApi = async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json();
+  const res = await axiosClient.get("https://fakestoreapi.com/products");
+  return res.data;
 };
 
 export const fetchIncomeApi = async () => {
