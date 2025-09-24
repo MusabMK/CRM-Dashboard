@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 
 import { Provider, useSelector } from "react-redux";
-import store from "./Redux/store.jsx";
+import store from "./store/store.jsx";
 import { lightTheme, darkTheme } from "./themeconfig.jsx";
 import { ConfigProvider } from "antd";
 

@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import { Table, Card, Spin, Alert , Button} from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchProductsRequest } from "../Redux/productSlice";
-import { addProductToList } from "../Redux/selectedProductsSlice";
+import { addProductToList } from "../store/actions.jsx";
+import { requestFetchProducts } from "../saga/sagaActions.jsx"; 
 
 const Products = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { list, loading, error } = useSelector((state) => state.products);
+  const { items, loading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(fetchProductsRequest());
+    dispatch(requestFetchProducts());
   }, [dispatch]);
 
   const handleAdd = (product) => {
@@ -63,7 +63,7 @@ const Products = () => {
         {!loading && !error && (
           <Table
             columns={columns}
-            dataSource={list.map((item) => ({ ...item, key: String(item.id) }))}
+            dataSource={items.map((item) => ({ ...item, key: String(item.id) }))}
             pagination={{ pageSize: 5 }}
             rowKey={(row) => String(row.id)}
           />

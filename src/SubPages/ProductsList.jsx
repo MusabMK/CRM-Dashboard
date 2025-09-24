@@ -1,10 +1,9 @@
 import React from "react";
 import { Table, Card, Button, Popconfirm} from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  removeProductFromList,
-  clearProductsList,
-} from "../Redux/selectedProductsSlice";
+
+import { removeProductFromList, clearProductsList } from "../store/actions";
+
 
 const ProductsList = () => {
   const dispatch = useDispatch();

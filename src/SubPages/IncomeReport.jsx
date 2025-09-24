@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Line } from "@ant-design/charts";
 import { Spin, Card } from "antd";
-import { fetchIncomeRequest } from "../Redux/incomeSlice";
+
+import { requestFetchIncome } from "../saga/sagaActions";
 
 const IncomeReport = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.income);
 
   useEffect(() => {
-    dispatch(fetchIncomeRequest());
+    dispatch(requestFetchIncome());
   }, [dispatch]);
 
   const config = {

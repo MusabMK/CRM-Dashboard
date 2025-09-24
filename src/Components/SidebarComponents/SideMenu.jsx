@@ -3,7 +3,7 @@ import { Menu, theme, Avatar } from "antd";
 import { UserOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import menuItems from "../../utils/MenuItems.jsx";
-import { toggleCollapse } from "../../Redux/themeSlice.jsx";
+import { toggleCollapse } from "../../store/actions.jsx";
 import SidebarLogo from "../../assets/setting 1.svg?react";
 import { useDispatch, useSelector } from "react-redux";
 
