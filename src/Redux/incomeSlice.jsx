@@ -1,32 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
-// const incomeSlice = createSlice({
-//   name: "income",
-//   initialState: {
-//     data: [],
-//     loading: false,
-//     error: null,
-//   },
-//   reducers: {
-//     fetchIncomeRequest: (state) => {
-//       state.loading = true;
-//       state.error = null;
-//     },
-//     fetchIncomeSuccess: (state, action) => {
-//       state.loading = false;
-//       state.data = action.payload;
-//     },
-//     fetchIncomeFailure: (state, action) => {
-//       state.loading = false;
-//       state.error = action.payload;
-//     },
-//   },
-// });
-
-// export const { fetchIncomeRequest, fetchIncomeSuccess, fetchIncomeFailure } =
-//   incomeSlice.actions;
-
-// export default incomeSlice.reducer;
 import { createSlice } from "@reduxjs/toolkit";
 
 const incomeSlice = createSlice({

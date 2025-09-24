@@ -7,10 +7,11 @@ import Help from "../Pages/Help";
 import Income from "../Pages/Income";
 import Promote from "../Pages/Promote";
 import AddCustomer from "../SubPages/AddCustomer";
-import AddProduct from "../SubPages/AddProduct";
+import ProductsList from "../SubPages/ProductsList";
 import IncomeReport from "../SubPages/IncomeReport";
 import NewCampaign from "../SubPages/NewCampaigns";
 import ContactSupport from "../SubPages/ContactSupport";
+
 
 const MainRoutes = () => {
   return (
@@ -19,7 +20,7 @@ const MainRoutes = () => {
 
       {/* Products */}
       <Route path="products" element={<Products />} />
-      <Route path="products/new" element={<AddProduct />} />
+      <Route path="products/list" element={<ProductsList />} />
 
       {/* Customers */}
       <Route path="customer" element={<Customer />} />

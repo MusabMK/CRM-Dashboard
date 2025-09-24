@@ -37,7 +37,7 @@ const AddCustomer = () => {
   return (
     <Card
       title={editingCustomer ? "Edit Customer" : "Add New Customer"}
-      style={{ margin: "20px" }}
+      
     >
       <Form
         form={form}

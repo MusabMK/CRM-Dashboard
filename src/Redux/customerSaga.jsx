@@ -14,7 +14,7 @@ const fetchCustomersApi = async () => {
   const data = await res.json();
 
   return data.results.map((user) => ({
-    key: user.login.uuid, // ✅ Use the unique UUID as the key
+    key: user.login.uuid, 
     name: `${user.name.first} ${user.name.last}`,
     company: user.location?.city || "—",
     phone: user.phone,
@@ -36,8 +36,7 @@ function* fetchCustomersWorker() {
 function* deleteCustomerWorker(action) {
   try {
     const customerKey = action.payload;
-    // In a real app, you'd make an API call here.
-    // For this example, we just dispatch the success action
+    
     yield put(deleteCustomerSuccess(customerKey));
   } catch (error) {
     yield put(deleteCustomerFailure(error.message));
